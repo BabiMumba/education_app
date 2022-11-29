@@ -21,6 +21,7 @@
     <color name="contentStatusBar">#f8cbb3</color>
 
     <!--gradient colors-->
+
     <color name="gradientOrange">#FF416C</color>
     <color name="gradientViolet">#8A52E9</color>
     <color name="gradientLightYellow">#FFA72F</color>
@@ -32,6 +33,7 @@
     <color name="gradientLightGreen">#21E8AC</color>
 
     <!--colors for nongradientversion-->
+
     <color name="cardColorTeal">#09CD95</color>
     <color name="cardColorOrange">#FF651B</color>
     <color name="cardColorYellow">#FF991F</color>

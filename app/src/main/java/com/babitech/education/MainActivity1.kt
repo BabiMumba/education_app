@@ -27,15 +27,7 @@ class MainActivity1 : AppCompatActivity(), NavigationView.OnNavigationItemSelect
         setContentView(R.layout.activity_main)
 
 
-        val toolbar = findViewById<View>(R.id.toolbar) as Toolbar
-        setSupportActionBar(toolbar)
 
-        val drawer = findViewById<View>(R.id.drawer_layout) as DrawerLayout
-        val toggle = ActionBarDrawerToggle(
-            this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close
-        )
-        drawer.addDrawerListener(toggle)
-        toggle.syncState()
         val navigationView = findViewById<View>(R.id.nav_view) as NavigationView
         navigationView.setNavigationItemSelectedListener(this)
         bottomNavigationView = findViewById(R.id.navigation)
@@ -127,7 +119,6 @@ class MainActivity1 : AppCompatActivity(), NavigationView.OnNavigationItemSelect
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
             window.statusBarColor = this.resources.getColor(R.color.contentStatusBar)
-            //Light mode
             if (mode == MODE_LIGHT) {
                 window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
             }
