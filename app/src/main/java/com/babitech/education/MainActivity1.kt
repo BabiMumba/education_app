@@ -16,6 +16,8 @@ import android.view.View
 import android.view.Window
 import android.view.WindowManager
 import androidx.appcompat.widget.Toolbar
+import androidx.fragment.app.Fragment
+import com.babitech.education.fragment.CoursFragment
 
 class MainActivity1 : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
@@ -79,6 +81,11 @@ class MainActivity1 : AppCompatActivity(), NavigationView.OnNavigationItemSelect
         drawer.closeDrawer(GravityCompat.START)
         return true
     }
+    private fun loadFragmant(fragment: Fragment) =
+        supportFragmentManager.beginTransaction().apply {
+            replace(R.id.frame_layout,fragment)
+            commit()
+        }
 
     private val mOnNavigationItemSelectedListener =
         BottomNavigationView.OnNavigationItemSelectedListener { item ->
@@ -90,6 +97,7 @@ class MainActivity1 : AppCompatActivity(), NavigationView.OnNavigationItemSelect
 
                 }
                 R.id.navigationHome ->{
+                    loadFragmant(CoursFragment())
 
                 }
                 R.id.navigationSearch ->{
