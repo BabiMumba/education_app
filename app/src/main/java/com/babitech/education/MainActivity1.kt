@@ -15,6 +15,7 @@ import android.view.MenuItem
 import android.view.View
 import android.view.Window
 import android.view.WindowManager
+import android.widget.RelativeLayout
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import com.babitech.education.fragment.CoursFragment
@@ -39,16 +40,9 @@ class MainActivity1 : AppCompatActivity(), NavigationView.OnNavigationItemSelect
 
         bottomNavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
 
-        //
-        val layoutParams = bottomNavigationView.layoutParams as CoordinatorLayout.LayoutParams
-        layoutParams.behavior = BottomNavigationBehavior1()
-
         bottomNavigationView.selectedItemId = R.id.navigationHome
 
-        findViewById<View>(R.id.floatingActionButton).setOnClickListener {
-            val drawer = findViewById<View>(R.id.drawer_layout) as DrawerLayout
-            drawer.openDrawer(GravityCompat.START)
-        }
+
     }
 
     override fun onBackPressed() {
