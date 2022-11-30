@@ -24,10 +24,7 @@ class CoursFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val v =inflater.inflate(R.layout.fragment_cours, container, false)
-        val floatbtn = v.findViewById<FloatingActionButton>(R.id.floatingActionButton)
-        floatbtn.setOnClickListener {
-            Toast.makeText(activity, "salut", Toast.LENGTH_SHORT).show()
-        }
+
 
         return v
     }

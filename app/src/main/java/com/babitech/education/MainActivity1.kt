@@ -94,7 +94,6 @@ class MainActivity1 : AppCompatActivity(), NavigationView.OnNavigationItemSelect
             when (item.itemId) {
                 R.id.navigationMyProfile -> {
                     loadFragmant(ProfilFragment())
-                    Toast.makeText(this, "salut masta", Toast.LENGTH_SHORT).show()
 
                 }
                 R.id.navigationMyCourses -> {
@@ -102,7 +101,6 @@ class MainActivity1 : AppCompatActivity(), NavigationView.OnNavigationItemSelect
                 }
                 R.id.navigationHome ->{
                     loadFragmant(CoursFragment())
-                    Toast.makeText(this, "salut", Toast.LENGTH_SHORT).show()
 
                 }
                 R.id.navigationSearch ->{
