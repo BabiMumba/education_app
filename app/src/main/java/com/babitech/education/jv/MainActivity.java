@@ -72,13 +72,16 @@ public class MainActivity extends AppCompatActivity
         bottomNavigationView.setSelectedItemId(R.id.navigationHome);
 
         //handling floating action menu
-        findViewById(R.id.floatingActionButton).setOnClickListener(new View.OnClickListener() {
+        /*
+            findViewById(R.id.floatingActionButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
                 drawer.openDrawer(GravityCompat.START);
             }
         });
+         */
+
 
     }
 

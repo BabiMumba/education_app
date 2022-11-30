@@ -6,7 +6,8 @@
     xmlns:gl="http://schemas.android.com/apk/res-auto"
     tools:showIn="@layout/app_bar_main"
     style="@style/parent.contentLayout"
-    android:background="#00000000">
+    android:padding="5dp"
+    android:background="@color/whiteBodyColor">
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -17,8 +18,10 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+
             <RelativeLayout
                 android:paddingTop="10dp"
+                android:background="@drawable/bk_profil"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
