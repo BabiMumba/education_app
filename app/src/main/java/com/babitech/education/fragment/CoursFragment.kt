@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.cardview.widget.CardView
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
@@ -24,6 +25,15 @@ class CoursFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val v =inflater.inflate(R.layout.fragment_cours, container, false)
+        val mathid = v.findViewById<CardView>(R.id.math_id)
+        val physiid = v.findViewById<CardView>(R.id.physique_id)
+        mathid.setOnClickListener {
+            Toast.makeText(activity, "mathematique", Toast.LENGTH_SHORT).show()
+        }
+        physiid.setOnClickListener {
+            Toast.makeText(activity, "physique", Toast.LENGTH_SHORT).show()
+            
+        }
 
 
         return v
