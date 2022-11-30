@@ -41,8 +41,8 @@
                     android:layout_height="80dp"
                     android:layout_marginStart="10dp"
                     android:src="@drawable/ic_propic1"
-                    app:civ_border_color="@color/whiteBodyColor"
-                    app:civ_border_width="2dp" />
+
+                   />
 
                 <ImageView
                     android:layout_width="250dp"
@@ -50,7 +50,6 @@
                     android:layout_alignParentEnd="true"
                     android:adjustViewBounds="true"
                     android:src="@drawable/hero" />
-
 
             </RelativeLayout>
 
