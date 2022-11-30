@@ -16,6 +16,7 @@ import android.view.View
 import android.view.Window
 import android.view.WindowManager
 import android.widget.RelativeLayout
+import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import com.babitech.education.fragment.CoursFragment
@@ -34,13 +35,13 @@ class MainActivity1 : AppCompatActivity(), NavigationView.OnNavigationItemSelect
 
         val navigationView = findViewById<View>(R.id.nav_view) as NavigationView
         navigationView.setNavigationItemSelectedListener(this)
+
         bottomNavigationView = findViewById(R.id.navigation)
 
         loadFragmant(CoursFragment())
-
         bottomNavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
-
         bottomNavigationView.selectedItemId = R.id.navigationHome
+
 
 
     }
@@ -65,6 +66,7 @@ class MainActivity1 : AppCompatActivity(), NavigationView.OnNavigationItemSelect
             R.id.nav_manage -> {
             }
             R.id.nav_share -> {
+                Toast.makeText(this, "share", Toast.LENGTH_SHORT).show()
             }
             R.id.nav_dark_mode -> {
 
@@ -84,7 +86,6 @@ class MainActivity1 : AppCompatActivity(), NavigationView.OnNavigationItemSelect
             replace(R.id.frame_layout,fragment)
             commit()
         }
-
     private val mOnNavigationItemSelectedListener =
         BottomNavigationView.OnNavigationItemSelectedListener { item ->
             when (item.itemId) {
