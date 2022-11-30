@@ -6,7 +6,6 @@
     xmlns:gl="http://schemas.android.com/apk/res-auto"
     tools:showIn="@layout/app_bar_main"
     style="@style/parent.contentLayout"
-    android:padding="5dp"
     android:background="@color/whiteBodyColor">
 
     <androidx.core.widget.NestedScrollView
@@ -24,17 +23,31 @@
                 android:background="@drawable/bk_profil"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Babi"
+                    android:layout_toEndOf="@id/profil"
+                    android:textColor="@color/whiteBodyColor"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="5dp"
+                    />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/profil"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginStart="10dp"
+                    android:src="@drawable/ic_propic1"
+                    app:civ_border_color="@color/whiteBodyColor"
+                    app:civ_border_width="2dp" />
 
                 <ImageView
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="250dp"
+                    android:layout_height="200dp"
                     android:layout_alignParentEnd="true"
-                    android:src="@drawable/ic_user" />
-
-                <ImageView
-                    android:layout_width="300dp"
-                    android:layout_height="250dp"
-                    android:layout_alignParentStart="true"
                     android:adjustViewBounds="true"
                     android:src="@drawable/hero" />
 
@@ -44,7 +57,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp">
+                android:padding="5dp"
+                android:layout_marginTop="10dp">
 
                 <LinearLayout
                     android:layout_width="0dp"
