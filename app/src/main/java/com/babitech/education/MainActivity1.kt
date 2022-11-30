@@ -70,7 +70,6 @@ class MainActivity1 : AppCompatActivity(), NavigationView.OnNavigationItemSelect
                 Toast.makeText(this, "share", Toast.LENGTH_SHORT).show()
             }
             R.id.nav_dark_mode -> {
-
                 val darkModePrefManager = DarkModePrefManager(this)
                 darkModePrefManager.setDarkMode(!darkModePrefManager.isNightMode)
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
@@ -81,14 +80,13 @@ class MainActivity1 : AppCompatActivity(), NavigationView.OnNavigationItemSelect
         drawer.closeDrawer(GravityCompat.START)
         return true
     }
- private fun loadFragmant(fragment: Fragment) =
+
+    private fun loadFragmant(fragment: Fragment) =
         supportFragmentManager.beginTransaction().apply {
             replace(R.id.frame_layout,fragment)
             commit()
         }
 
-
-  
     private val mOnNavigationItemSelectedListener =
         BottomNavigationView.OnNavigationItemSelectedListener { item ->
             when (item.itemId) {
