@@ -38,7 +38,7 @@ class MainActivity1 : AppCompatActivity(), NavigationView.OnNavigationItemSelect
 
         bottomNavigationView = findViewById(R.id.navigation)
 
-        loadFragmant(CoursFragment())
+       // loadFragmant(CoursFragment())
         bottomNavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
         bottomNavigationView.selectedItemId = R.id.navigationHome
 
@@ -62,6 +62,7 @@ class MainActivity1 : AppCompatActivity(), NavigationView.OnNavigationItemSelect
             R.id.nav_gallery -> {
             }
             R.id.nav_slideshow -> {
+                Toast.makeText(this, "tu va bien", Toast.LENGTH_SHORT).show()
             }
             R.id.nav_manage -> {
             }
@@ -80,24 +81,28 @@ class MainActivity1 : AppCompatActivity(), NavigationView.OnNavigationItemSelect
         drawer.closeDrawer(GravityCompat.START)
         return true
     }
-
-    private fun loadFragmant(fragment: Fragment) =
+/*  private fun loadFragmant(fragment: Fragment) =
         supportFragmentManager.beginTransaction().apply {
             replace(R.id.frame_layout,fragment)
             commit()
         }
+
+ */
+  
     private val mOnNavigationItemSelectedListener =
         BottomNavigationView.OnNavigationItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.navigationMyProfile -> {
-                    loadFragmant(ProfilFragment())
+                    //loadFragmant(ProfilFragment())
+                    Toast.makeText(this, "salut masta", Toast.LENGTH_SHORT).show()
 
                 }
                 R.id.navigationMyCourses -> {
 
                 }
                 R.id.navigationHome ->{
-                    loadFragmant(CoursFragment())
+                    //loadFragmant(CoursFragment())
+                    Toast.makeText(this, "salut", Toast.LENGTH_SHORT).show()
 
                 }
                 R.id.navigationSearch ->{
