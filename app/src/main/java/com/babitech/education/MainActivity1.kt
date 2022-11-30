@@ -6,8 +6,6 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.core.view.GravityCompat
 import android.os.Bundle
-import androidx.appcompat.app.ActionBarDrawerToggle
-import androidx.coordinatorlayout.widget.CoordinatorLayout
 import com.babitech.education.jv.DarkModePrefManager
 import androidx.appcompat.app.AppCompatDelegate
 import android.os.Build
@@ -15,9 +13,7 @@ import android.view.MenuItem
 import android.view.View
 import android.view.Window
 import android.view.WindowManager
-import android.widget.RelativeLayout
 import android.widget.Toast
-import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import com.babitech.education.fragment.CoursFragment
 import com.babitech.education.fragment.ProfilFragment
