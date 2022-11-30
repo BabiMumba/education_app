@@ -38,8 +38,6 @@ class MainActivity1 : AppCompatActivity(), NavigationView.OnNavigationItemSelect
         bottomNavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
         bottomNavigationView.selectedItemId = R.id.navigationHome
 
-
-
     }
 
     override fun onBackPressed() {
@@ -54,8 +52,10 @@ class MainActivity1 : AppCompatActivity(), NavigationView.OnNavigationItemSelect
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.nav_camera -> {
+
             }
             R.id.nav_gallery -> {
+
             }
             R.id.nav_slideshow -> {
                 Toast.makeText(this, "tu va bien", Toast.LENGTH_SHORT).show()
@@ -107,8 +107,6 @@ class MainActivity1 : AppCompatActivity(), NavigationView.OnNavigationItemSelect
             }
             true
         }
-
-
 
     private fun setDarkMode(window: Window) {
         if (DarkModePrefManager1(this).isNightMode) {

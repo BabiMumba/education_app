@@ -9,10 +9,10 @@
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        tools:context=".jv.MainActivity"
         android:background="@color/contentBodyColor">
 
         <ImageView
-            style="@style/DarkModeHidden"
             android:id="@+id/imageView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -22,17 +22,6 @@
         <include
             layout="@layout/content_main" />
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/floatingActionButton"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_margin="10dp"
-            android:clickable="true"
-            app:layout_anchor="@+id/imageView2"
-            app:layout_anchorGravity="start|top"
-            app:srcCompat="@drawable/menu"
-            android:scaleType="center"
-            android:contentDescription="@string/app_name" />
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
