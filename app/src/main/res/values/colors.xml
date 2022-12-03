@@ -49,6 +49,7 @@
     <color name="orange_one">#e65252</color>
     <color name="orange_two">#e65252</color>
     <color name="orange_three">#e65252</color>
+    <color name="black">#000000</color>
 
 
     <array name="active">
