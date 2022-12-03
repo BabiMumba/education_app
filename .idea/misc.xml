@@ -6,7 +6,9 @@
         <entry key="..\:/Android_app/Education/app/src/main/res/drawable/bk_profil.xml" value="0.16" />
         <entry key="..\:/Android_app/Education/app/src/main/res/drawable/ic_topbk.xml" value="0.1945" />
         <entry key="..\:/Android_app/Education/app/src/main/res/drawable/ic_user.xml" value="0.1945" />
+        <entry key="..\:/Android_app/Education/app/src/main/res/layout/activity_home.xml" value="0.18645833333333334" />
         <entry key="..\:/Android_app/Education/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Android_app/Education/app/src/main/res/layout/activity_main_s.xml" value="0.18645833333333334" />
         <entry key="..\:/Android_app/Education/app/src/main/res/layout/app_bar_main.xml" value="0.16666666666666666" />
         <entry key="..\:/Android_app/Education/app/src/main/res/layout/card_frutorials.xml" value="0.18645833333333334" />
         <entry key="..\:/Android_app/Education/app/src/main/res/layout/card_popular_courses.xml" value="0.18645833333333334" />
@@ -14,6 +16,9 @@
         <entry key="..\:/Android_app/Education/app/src/main/res/layout/content_main_alt.xml" value="0.18645833333333334" />
         <entry key="..\:/Android_app/Education/app/src/main/res/layout/fragment_cours.xml" value="0.1" />
         <entry key="..\:/Android_app/Education/app/src/main/res/layout/fragment_profil.xml" value="0.18645833333333334" />
+        <entry key="..\:/Android_app/Education/app/src/main/res/layout/intro_one.xml" value="0.18645833333333334" />
+        <entry key="..\:/Android_app/Education/app/src/main/res/layout/intro_three.xml" value="0.18645833333333334" />
+        <entry key="..\:/Android_app/Education/app/src/main/res/layout/intro_two.xml" value="0.18645833333333334" />
         <entry key="..\:/Android_app/Education/app/src/main/res/layout/nav_header_main.xml" value="0.18645833333333334" />
       </map>
     </option>
