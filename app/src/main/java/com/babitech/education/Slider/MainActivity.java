@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView tvNext, tvSkip;
     private ViewPager viewPager;
     private LinearLayout layoutDots;
-    private IntroPref introPref;
+   // private IntroPref introPref;
     private int[] layouts;
     private TextView[] dots;
     private MyViewPagerAdapter viewPagerAdapter;
@@ -36,11 +36,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_s);
 
-        introPref = new IntroPref(this);
+       // introPref = new IntroPref(this);
+
+        /*
         if (!introPref.isFirstTimeLaunch()) {
-            launchHomeScreen();
+           launchHomeScreen();
             finish();
         }
+         */
+
 
         if (Build.VERSION.SDK_INT >= 21) {
             getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE |
@@ -176,10 +180,11 @@ public class MainActivity extends AppCompatActivity {
     private int getItem(int i) {
         return viewPager.getCurrentItem() + 1;
     }
-
-    private void launchHomeScreen() {
-        introPref.setIsFirstTimeLaunch(false);
+ private void launchHomeScreen() {
+        //introPref.setIsFirstTimeLaunch(false);
         startActivity(new Intent(MainActivity.this, ActivityHome.class));
         finish();
     }
+
+
 }
