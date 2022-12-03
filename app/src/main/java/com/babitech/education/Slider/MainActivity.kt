@@ -28,6 +28,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var dots: Array<TextView?>
 
     private var viewPagerAdapter: MyViewPagerAdapter? = null
+    @Suppress("DEPRECATION")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_s)
@@ -50,15 +51,15 @@ class MainActivity : AppCompatActivity() {
             R.layout.intro_two,
             R.layout.intro_three
         )
-        tvNext.setOnClickListener(View.OnClickListener {
+        tvNext.setOnClickListener {
             val current = getItem()
             if (current < layouts.size) {
                 viewPager.currentItem = current
             } else {
                 launchHomeScreen()
             }
-        })
-        tvSkip.setOnClickListener(View.OnClickListener {
+        }
+        tvSkip.setOnClickListener {
             val current = getItem()
             if (current < layouts.size) {
                 // move to next screen
@@ -66,7 +67,7 @@ class MainActivity : AppCompatActivity() {
             } else {
                 launchHomeScreen()
             }
-        })
+        }
         viewPagerAdapter = MyViewPagerAdapter()
         viewPager.adapter = viewPagerAdapter
         viewPager.addOnPageChangeListener(onPageChangeListener)
@@ -91,9 +92,9 @@ class MainActivity : AppCompatActivity() {
         override fun onPageSelected(position: Int) {
             addBottomDots(position)
             if (position == layouts.size - 1) {
-                tvNext.text = "START"
+                tvNext.text = "commencer"
             } else {
-                tvNext.text = "NEXT"
+                tvNext.text = "Suivant"
             }
         }
 
@@ -110,7 +111,7 @@ class MainActivity : AppCompatActivity() {
             dots[i]!!.text = Html.fromHtml("&#8226")
             dots[i]!!.textSize = 50f
             dots[i]!!.setTextColor(inActiveColors[currentPage])
-            layoutDots!!.addView(dots[i])
+            layoutDots.addView(dots[i])
         }
         if (dots.isNotEmpty()) {
             dots[currentPage]!!.setTextColor(activeColors[currentPage])
