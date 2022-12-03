@@ -4,10 +4,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.widget.TextView
 import androidx.viewpager.widget.ViewPager
 import android.widget.LinearLayout
-import com.babitech.education.Slider.MainActivity.MyViewPagerAdapter
 import android.os.Bundle
 import com.babitech.education.R
-import android.os.Build
 import android.view.WindowManager
 import androidx.viewpager.widget.ViewPager.OnPageChangeListener
 import android.text.Html
@@ -17,17 +15,17 @@ import android.view.ViewGroup
 import android.content.Intent
 import android.graphics.Color
 import android.view.View
-import com.babitech.education.Slider.ActivityHome
 
 class MainActivity : AppCompatActivity() {
-    private var tvNext: TextView? = null
-    private var tvSkip: TextView? = null
-    private var viewPager: ViewPager? = null
-    private var layoutDots: LinearLayout? = null
+
+    private lateinit var tvSkip: TextView
+    private lateinit var tvNext: TextView
+    private lateinit var viewPager: ViewPager
+    private lateinit var layoutDots: LinearLayout
 
     // private IntroPref introPref;
-    private var layouts: IntArray
-    private var dots: Array<TextView?>
+    private lateinit var layouts: IntArray
+    private lateinit var dots: Array<TextView?>
 
     private var viewPagerAdapter: MyViewPagerAdapter? = null
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -53,38 +51,36 @@ class MainActivity : AppCompatActivity() {
             R.layout.intro_three
         )
         tvNext.setOnClickListener(View.OnClickListener {
-            val current = getItem(+1)
+            val current = getItem()
             if (current < layouts.size) {
-                viewPager.setCurrentItem(current)
+                viewPager.currentItem = current
             } else {
                 launchHomeScreen()
             }
         })
         tvSkip.setOnClickListener(View.OnClickListener {
-            val current = getItem(+1)
+            val current = getItem()
             if (current < layouts.size) {
                 // move to next screen
-                viewPager.setCurrentItem(current + 2)
+                viewPager.currentItem = current + 2
             } else {
                 launchHomeScreen()
             }
         })
         viewPagerAdapter = MyViewPagerAdapter()
-        viewPager.setAdapter(viewPagerAdapter)
+        viewPager.adapter = viewPagerAdapter
         viewPager.addOnPageChangeListener(onPageChangeListener)
         addBottomDots(0)
         changeStatusBarColor()
     }
 
     private fun changeStatusBarColor() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            val window = window
-            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
-            window.statusBarColor = Color.TRANSPARENT
-        }
+        val window = window
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
+        window.statusBarColor = Color.TRANSPARENT
     }
 
-    var onPageChangeListener: OnPageChangeListener = object : OnPageChangeListener {
+    private var onPageChangeListener: OnPageChangeListener = object : OnPageChangeListener {
         override fun onPageScrolled(
             position: Int,
             positionOffset: Float,
@@ -95,9 +91,9 @@ class MainActivity : AppCompatActivity() {
         override fun onPageSelected(position: Int) {
             addBottomDots(position)
             if (position == layouts.size - 1) {
-                tvNext!!.text = "START"
+                tvNext.text = "START"
             } else {
-                tvNext!!.text = "NEXT"
+                tvNext.text = "NEXT"
             }
         }
 
@@ -108,7 +104,7 @@ class MainActivity : AppCompatActivity() {
         dots = arrayOfNulls(layouts.size)
         val activeColors = resources.getIntArray(R.array.active)
         val inActiveColors = resources.getIntArray(R.array.inactive)
-        layoutDots!!.removeAllViews()
+        layoutDots.removeAllViews()
         for (i in dots.indices) {
             dots[i] = TextView(this)
             dots[i]!!.text = Html.fromHtml("&#8226")
@@ -116,7 +112,7 @@ class MainActivity : AppCompatActivity() {
             dots[i]!!.setTextColor(inActiveColors[currentPage])
             layoutDots!!.addView(dots[i])
         }
-        if (dots.size > 0) {
+        if (dots.isNotEmpty()) {
             dots[currentPage]!!.setTextColor(activeColors[currentPage])
         }
     }
@@ -144,8 +140,8 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun getItem(i: Int): Int {
-        return viewPager!!.currentItem + 1
+    private fun getItem(): Int {
+        return viewPager.currentItem + 1
     }
 
     private fun launchHomeScreen() {
