@@ -35,7 +35,6 @@ class CoursFragment : Fragment() {
             
         }
 
-
         return v
     }
 
